@@ -11,7 +11,7 @@ const HomePage = () => {
   const [dropdown, setDropdown] = useState(false);
   const debounced = useDebounce(search);
   const { isLoading, isError, data } = useSearchUsersQuery(debounced, {
-    /* Пропускаем отправку дынных, если количество символов меньше 3х */
+    /* Пропускаем отправку данных, если количество символов меньше 3х */
     skip: debounced.length < 3,
 
     /* Обновление данных при появлении активности на сайте спустя время */
@@ -31,7 +31,7 @@ const HomePage = () => {
   }, [debounced, data]);
 
   return (
-    <div className="flex justify-center mx-auto pt-10 h-screen w-screen">
+    <div className="flex justify-center mx-auto pt-10 h-screen w-screen px-4">
       {isError && (
         <h3 className="text-center text-red-600">Что-то пошло не так...</h3>
       )}
